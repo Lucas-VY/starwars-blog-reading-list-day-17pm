@@ -9,18 +9,17 @@ const injectContext = PassedComponent => {
             getActions: () => state.actions,
             setStore: updateStore => setState({
                 store: Object.assign(state.store, updateStore),
+                store: { ...state.store, ...updateStore },
                 actions: { ...state.actions }
             })
         }));
 
         useEffect(() => {
             // funciones a ejecutar cuando carga la pagina
-            state.actions.getList();
-            state.actions.getCharacters('https://swapi.dev/api/people/');
-            state.actions.getPlanets("https://swapi.dev/api/planets/");
-            state.actions.getVehicles("https://swapi.dev/api/starships/")
-        
-        }, []) // causa error si le pongo state actions
+            state.actions.getCharacters();
+            state.actions.getPlanets();
+            state.actions.getVehicles();
+        }, [])
 
         return (
             <Context.Provider value={state}>

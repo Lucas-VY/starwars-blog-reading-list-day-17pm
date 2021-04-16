@@ -22,7 +22,7 @@ const Vehicles = () => {
                   <div className="card w-100 animate__animated animate__fadeIn">
                     <img
                       class="card-img-top"
-                      src={`https://starwars-visualguide.com/assets/img/startships/${
+                      src={`https://starwars-visualguide.com/assets/img/vehicles/${
                         i + 1
                       }.jpg`}
                       alt="http://placehold.it/400x200"

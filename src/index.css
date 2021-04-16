@@ -115,28 +115,38 @@ body {
   color: rgb(206, 209, 12) !important;
 }
 
-
-
-
-.footer {
-  margin-top: 420px;
-  margin-left: 30px;
-  border: 1.5px solid rgba(240, 233, 200, 1);
-  width: 25%;
-  text-align: center;
-  padding: 3px;
-  background-color: rgb(99, 99, 8);
-  border-radius: 20px;
-  -webkit-box-shadow: 7px 7px 5px -4px rgba(240, 233, 200, 1);
-  -moz-box-shadow: 7px 7px 5px -4px rgba(240, 233, 200, 1);
-  box-shadow: 7px 7px 5px -4px rgba(240, 233, 200, 1);
-}
-
+/*  MODAL    */
 .modal-body,
 .modal-title {
   font-size: 30px !important;
 }
 
+.modal-body {
+  color: black;
+}
+
+.modal-backdrop {
+  background-image: url(http://3.bp.blogspot.com/-a9a9bZR5tq4/VivbqofnTTI/AAAAAAAAOI0/Q-VnRytpAQg/s1600/Screen%2BShot%2B2015-10-24%2Bat%2B3.26.30%2BPM.png);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.modal-dialog {
+  width: auto;
+  max-width: 960px;
+}
+
+#card-modal{
+  width: 900px;
+}
+
+.card-body .card-text {
+  color: red;
+}
 
 .card-body * {
   font-size: 26px !important;

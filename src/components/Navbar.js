@@ -5,8 +5,8 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark navbar-responsive">
       <div className="row">
         <div className="container">
-          {/*  LOGO */}
 
+          {/*  LOGO */}
           <a className="navbar-brand" href=".."> 
 
             <Link className="navbar-brand text-white" to="/"> 
@@ -37,12 +37,7 @@ const Navbar = () => {
                   <i className="fas fa-space-shuttle"></i> VEHICLES
                 </Link>
               </li>
-              <li className="nav-item lead px-2 rounded bg-danger mx-3">
-                <Link className="nav-link active" to="/vehicles">
-                  <i className="fas fa-rocket"></i> SPACESHIPS
-                </Link>
-              </li>
-              <li className="nav-item lead rounded bg-orange mx-3 favs">
+              <li class="form-inline">
                 <Link className="nav-link active favs" to="/favorites">
                   <i className="fas fa-star"></i> FAVORITES
                 </Link>

@@ -22,7 +22,7 @@ const Planets = () => {
                     <img
                       className="card-img-top"
                       src={`https://starwars-visualguide.com/assets/img/planets/${ i + 1 }.jpg`}
-                      alt="http://placehold.it/700x400"
+                      alt="https://via.placeholder.com/400x200.png"
                     />
                     <div className="card-body">
                       <h4 className="card-title">

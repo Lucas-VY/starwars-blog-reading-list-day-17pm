@@ -6,6 +6,14 @@ import "../index.css";
 function Characters() {
   const { store, actions } = useContext(Context);
 
+  // const { char } = store;
+  // const { id } = useParams();
+  // console.log(id);
+  // useEffect(() => {
+  // 	actions.getChar(`https://swapi.dev/api/people/${id}/`);
+  // }, []);
+
+
   return (
     <>
       <div className="row mb-5">
@@ -22,10 +30,9 @@ function Characters() {
                   <div className="card w-100 animate__animated animate__fadeIn">
                     <img
                       class="card-img-top"
-                      src={`https://starwars-visualguide.com/assets/img/characters/${
-                        i + 1
-                      }.jpg`}
-                      alt="http://placehold.it/400x200"
+                      src={`https://starwars-visualguide.com/assets/img/characters/${i + 1
+                        }.jpg`}
+                      alt="https://placeholder.com/#How_To_Set_Image_Size400x200"
                     />
                     <div className="card-body">
                       <h2 className="card-title">
@@ -37,7 +44,7 @@ function Characters() {
                     </div>
 
 
-                      {/* <!-- Button trigger modal --> */}
+                    {/* <!-- Button trigger modal --> */}
                     <div className="card-footer">
                       <button
                         type="button"
@@ -45,55 +52,77 @@ function Characters() {
                         data-toggle="modal"
                         data-target={"#exampleModal" + i}
                       >
-                        Read More
+                        Read More!
                       </button>
+
+                      {/* Favorite BUTTON */}
                       <button className="btn btn-lg btn-danger d-block float-right" onClick={() => actions.pushFavorite(valor.name)}>
                         <i class="fas fa-star"></i>
                       </button>
                     </div>
                   </div>
+
+
+
                   {/* <!-- Modal --> */}
+
+                  {/* MODAL HEADER */}
                   <div
-                    class="modal fade"
+                    className="modal fade"
                     id={"exampleModal" + i}
                     tabindex="-1"
                     aria-labelledby="exampleModalLabel"
                     aria-hidden="false"
                   >
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">
-                            {valor.name}
+                    <div className="modal-dialog modal-xl">
+                      <div className="modal-content">
+                        <div className="modal-header bg-dark">
+                          <h5 className="modal-title" id="exampleModalLabel">
+                          <Link to="#">{valor.name}</Link>
                           </h5>
-                          <button
+                          <button className="btn-close btn-sm btn-primary"
                             type="button"
-                            class="close"
                             data-dismiss="modal"
-                            aria-label="Close"
-                          >
-                            <span aria-hidden="true">&times;</span>
+                            aria-label="Close">
+                            <span aria-hidden="true">X</span>
                           </button>
                         </div>
-                        <div class="modal-body">
-                          <span className="text-danger">birthyear: </span>{" "}
-                          {valor.birth_year}
-                          {", "}{" "}
-                          <span className="text-danger">hair color: </span>{" "}
-                          {valor.hair_color}
-                          {", "}{" "}
-                          <span className="text-danger">eye color: </span>{" "}
-                          {valor.eye_color}
-                          {", "}{" "}
-                          <span className="text-danger">skin color: </span>{" "}
-                          {valor.skin_color}
-                          {", "} <span className="text-danger">mass: </span>{" "}
-                          {valor.mass}{" "}
+
+                        {/* MODAL BODY  */}
+
+                        <div className="modal-body bg-danger">
+                          
+                          {/*    HORIZONTAL CARD INSIDE MODAL  */}
+                          <div id="card-modal" className="card-md-3 bg-dark border-danger">
+                            <div className="row">
+                              <div className="col-md-4">
+                                <img src={`https://starwars-visualguide.com/assets/img/characters/${i + 1}.jpg`}
+                                  alt="https://placeholder.com/#How_To_Set_Image_Size400x200" />
+                              </div>
+                              <div className="col-md-7">
+                                <div className="card-body float-right">
+                                  <h1 className="card-title">
+                                  <Link to="#">MORE DETAILS</Link>  
+                                  </h1>
+                                  <p className="card-text">Eye Color: {valor.eye_color}</p>
+                                  <p className="card-text">Skin Color: {valor.skin_color}</p>
+                                  <p className="card-text">Mass: {valor.mass}</p>
+                                  <p className="card-text">Created: {valor.created}</p>
+                                  <p className="card-text">Edited: {valor.edited}</p>
+                                  <p className="card-text">HomeWorld: {valor.homeworld}</p>
+                                  <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
                         </div>
-                        <div class="modal-footer">
+
+                        {/* MODAL FOOTER */}
+                        <div class="modal-footer bg-dark">
                           <button
                             type="button"
-                            class="btn btn-secondary btn-lg"
+                            class="btn btn-secondary btn-danger btn-lg"
                             data-dismiss="modal"
                           >
                             Close and Keep Searching
@@ -112,3 +141,7 @@ function Characters() {
 }
 
 export default Characters;
+
+
+
+/* */
