@@ -1,0 +1,41 @@
+@font-face {
+    font-family: starjedi;
+    src: './public/fonts/starjedi.ttf';
+  }
+  
+  .notfound{
+    color: yellow;
+  }
+  
+  .bg-nav{
+    background-image: url();
+    font-family:  starjedi;
+    color: yellow;
+  }
+  
+  .title{
+    font-family:  starjedi;
+    color: yellow;
+  }
+  
+  .card-text{
+    font-family:  starjedi;
+  }
+  
+  .heart:hover{
+    
+    color: red;
+  }
+  .heart-clicked{
+    background-color: red;
+  }
+  
+  p{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  .pintado{
+    color: red;
+    font-size: 20px;
+  }
