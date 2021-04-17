@@ -21,7 +21,7 @@ const Planets = () => {
                   <div className="card w-100 animate__animated animate__fadeIn">
                     <img
                       className="card-img-top"
-                      src={`https://starwars-visualguide.com/assets/img/planets/${ i + 1 }.jpg`}
+                      src={`https://starwars-visualguide.com/assets/img/planets/${i + 1}.jpg`}
                       alt="https://via.placeholder.com/400x200.png"
                     />
                     <div className="card-body">
@@ -34,8 +34,8 @@ const Planets = () => {
 
                       {/* <!-- Button trigger modal --> */}
                       <button
-                        type="button"
                         className="btn btn-primary btn-lg"
+                        type="button"
                         data-toggle="modal"
                         data-target={"#exampleModal" + i}
                       >
@@ -49,48 +49,65 @@ const Planets = () => {
 
 
                   {/* <!-- Modal --> */}
-                  <div
-                    className="modal fade"
+
+                  <div className="modal fade"
                     id={"exampleModal" + i}
                     tabindex="-1"
                     aria-labelledby="exampleModalLabel"
-                    aria-hidden="false"
-                  >
+                    aria-hidden="false">
+
                     <div className="modal-dialog">
                       <div className="modal-content">
-                        <div className="modal-header">
+                        <div className="modal-header bg-dark">
                           <h5 className="modal-title" id="exampleModalLabel">
-                            {valor.name}
+                            <Link to="#">{valor.name}</Link>
                           </h5>
                           <button
+                            className="btn-close btn-sm btn-primary"
                             type="button"
-                            className="close"
                             data-dismiss="modal"
-                            aria-label="Close"
-                          >
+                            aria-label="Close">
                             <span aria-hidden="true">X</span>
                           </button>
                         </div>
-                        <div className="modal-body">
-                          <span className="text-danger">climate:  {valor.climate} </span>{" "}
-                         
-                          {", "}{" "}
-                          <span className="text-danger">population: </span>{" "}
-                          {valor.population}
-                          {", "} <span className="text-danger">gravity: </span>{" "}
-                          {valor.gravity}
-                          {", "} <span className="text-danger">diameter: </span>{" "}
-                          {valor.diameter}
-                          {", "} <span className="text-danger">terrain: </span>:{" "}
-                          {valor.terrain}{" "}
-                        </div>
-                        <div className="modal-footer">
+
+                          {/*  MODAL CARD PLANETS */}
+                          <div className="modal-body bg-success">
+ 
+                            {/* PLANET CARD */}
+                            <div id="card-modal" className="card-md-3 bg-dark border-danger">
+                              <div className="row">
+                                <div className="col-md-4">
+                                  <img src={`https://starwars-visualguide.com/assets/img/planets/${i + 1}.jpg`}
+                                    alt="https://placeholder.com/#How_To_Set_Image_Size400x200" />
+                                </div>
+                                <div className="col-md-7">
+                                  <div className="card-body float-right">
+                                    <h1 className="card-title">
+                                      <Link to="#">MORE DETAILS</Link>
+                                    </h1>
+                                    <p className="card-text">Climate: {valor.climate}</p>
+                                    <p className="card-text">Population: {valor.population}</p>
+                                    <p className="card-text">Gravity: {valor.gravity}</p>
+                                    <p className="card-text">Diameter: {valor.diameter}</p>
+                                    <p className="card-text">Terrain: {valor.terrain}</p>
+                                    <p className="card-text">HomeWorld: {valor.homeworld}</p>
+                                    <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+                        {/* MODAL FOOTER */}
+                        <div className="modal-footer bg-dark">
                           <button
                             type="button"
-                            className="btn btn-danger"
+                            className="btn btn-secondary btn-danger btn-lg"
                             data-dismiss="modal"
                           >
-                            close
+                            Close and Keep Searching!
                           </button>
                         </div>
                       </div>

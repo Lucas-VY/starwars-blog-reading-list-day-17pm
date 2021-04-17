@@ -3,16 +3,9 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../index.css";
 
-function Characters() {
+const Characters =() => {
   const { store, actions } = useContext(Context);
-
-  // const { char } = store;
-  // const { id } = useParams();
-  // console.log(id);
-  // useEffect(() => {
-  // 	actions.getChar(`https://swapi.dev/api/people/${id}/`);
-  // }, []);
-
+  
 
   return (
     <>
@@ -57,12 +50,11 @@ function Characters() {
 
                       {/* Favorite BUTTON */}
                       <button className="btn btn-lg btn-danger d-block float-right" onClick={() => actions.pushFavorite(valor.name)}>
-                        <i class="fas fa-star"></i>
+                        <i className="fas fa-star " ></i>
                       </button>
                     </div>
                   </div>
-
-
+       
 
                   {/* <!-- Modal --> */}
 
@@ -87,8 +79,8 @@ function Characters() {
                             <span aria-hidden="true">X</span>
                           </button>
                         </div>
-
-                        {/* MODAL BODY  */}
+ 
+                        {/* MODAL BODY CHARACTERS */}
 
                         <div className="modal-body bg-danger">
                           
@@ -125,7 +117,7 @@ function Characters() {
                             class="btn btn-secondary btn-danger btn-lg"
                             data-dismiss="modal"
                           >
-                            Close and Keep Searching
+                            Close and Keep Searching!
                           </button>
                         </div>
                       </div>

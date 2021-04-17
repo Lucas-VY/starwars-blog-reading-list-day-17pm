@@ -6,7 +6,6 @@ import NotFound from "./views/Notfound";
 import Characters from "./views/Characters";
 import Planets from "./views/Planets";
 import Vehicles from "./views/Vehicles";
-import Starships from "./views/Starships"
 import Favorites from "./views/Favorites";
 import injectContext from "./store/appContext";
 
@@ -21,7 +20,6 @@ function App() {
             <Route exact path="/characters" component={Characters}></Route>
             <Route exact path="/planets" component={Planets}></Route>
             <Route exact path="/vehicles" component={Vehicles}></Route>
-            <Route exact path="/starships" component={Starships}></Route>
             <Route exact path="/favorites" component={Favorites}></Route>
             <Route component={NotFound}></Route>
           </Switch>

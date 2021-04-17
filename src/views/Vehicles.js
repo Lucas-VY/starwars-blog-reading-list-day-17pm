@@ -22,77 +22,95 @@ const Vehicles = () => {
                   <div className="card w-100 animate__animated animate__fadeIn">
                     <img
                       class="card-img-top"
-                      src={`https://starwars-visualguide.com/assets/img/vehicles/${
-                        i + 1
-                      }.jpg`}
-                      alt="http://placehold.it/400x200"
+                      src="https://www.denofgeek.com/wp-content/uploads/2019/12/x-wing.jpg?w=1024"
+                      alt=""
                     />
                     <div className="card-body">
                       <h4 className="card-title">
                         <Link to="#">{valor.name}</Link>
                       </h4>
                       <h4 className="card-text">model: {valor.model}</h4>
-                      <h4 className="card-text">Pilots: {valor.pilots}</h4>
+                      <h4 className="card-text">Consumables: {valor.consumables}</h4>
                       <h4 className="card-text">crew: {valor.crew}</h4>
                     </div>
                     <div className="card-footer">
                       {/* <!-- Button trigger modal --> */}
                       <button
+                        className="btn btn-primary btn-lg"
                         type="button"
-                        class="btn btn-primary btn-lg"
                         data-toggle="modal"
                         data-target={"#exampleModal" + i}
                       >
                         Read More
                       </button>
                       <button className="btn btn-lg btn-danger d-block float-right" onClick={() => actions.pushFavorite(valor.name)}>
-                        <i class="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
                       </button>
                     </div>
                   </div>
+
+
+
+
                   {/* <!-- Modal --> */}
                   <div
-                    class="modal fade"
+                    className="modal fade"
                     id={"exampleModal" + i}
                     tabindex="-1"
                     aria-labelledby="exampleModalLabel"
                     aria-hidden="false"
                   >
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">
-                            {valor.name}
+                    <div className="modal-dialog">
+                      <div className="modal-content">
+                        <div className="modal-header bg-dark">
+                          <h5 className="modal-title" id="exampleModalLabel">
+                            <Link to="#">{valor.name} </Link>
                           </h5>
                           <button
+                            className="btn-close -btn-sm btn-primary"
                             type="button"
-                            class="close"
                             data-dismiss="modal"
                             aria-label="Close"
                           >
-                            <span aria-hidden="true">&times;</span>
+                            <span aria-hidden="true">X</span>
                           </button>
                         </div>
-                        <div class="modal-body">
-                          <span className="text-danger">consumables: </span>{" "}
-                          {valor.consumables}
-                          {", "}{" "}
-                          <span className="text-danger">
-                            hyperdrive rating:{" "}
-                          </span>{" "}
-                          {valor.hyperdrive_rating}
-                          {", "} <span className="text-danger">length: </span>{" "}
-                          {valor.length}
-                          {", "}{" "}
-                          <span className="text-danger">starship_class: </span>{" "}
-                          {valor.starship_class}
-                          {", "} <span className="text-danger">cost: </span>{" "}
-                          {valor.cost_in_credits}{" "}
+
+                        {/*  MODAL BODY  */}
+
+
+                        {/*  MODAL CARD PLANETS */}
+                        <div className="modal-body bg-warning">
+
+                          {/* PLANET CARD */}
+                          <div id="card-modal" className="card-md-3 bg-dark border-warning">
+                            <div className="row">
+                              <div className="col-md-4">
+                                <img src="http://via.placeholder.com/500x500/"
+                                  alt="" />
+                              </div>
+                              <div className="col-md-7">
+                                <div className="card-body float-right">
+                                  <h1 className="card-title">
+                                    <Link to="#">MORE DETAILS</Link>
+                                  </h1>
+                                  <p className="card-text">Consumables: {valor.consumables}</p>
+                                  <p className="card-text">Hypedrive Rating: {valor.hyperdrive_rating}</p>
+                                  <p className="card-text">Length: {valor.length}</p>
+                                  <p className="card-text">StarShip Class: {valor.starship_class}</p>
+                                  <p className="card-text">Credit Cost: {valor.cost_in_credits}</p>
+                                  <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div class="modal-footer">
+
+                        {/*   MODA FOOTER */}
+                        <div className="modal-footer bg-dark">
                           <button
                             type="button"
-                            class="btn btn-secondary btn-lg"
+                            class="btn btn-secondary btn-danger btn-lg"
                             data-dismiss="modal"
                           >
                             Close and Keep Searching

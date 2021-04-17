@@ -14,8 +14,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  
 }
+
 .jumbotron {
   background: none
 }
@@ -24,6 +24,8 @@ body {
   color: white;
 }
 
+
+/* NAVBAR         */
 .navbar {
   background: rgb(7, 9, 9);
   background: linear-gradient(
@@ -33,16 +35,20 @@ body {
   );
   font-family: "Bebas Neue";
 }
+.main-nav{
+  float:left;
+}
+#favorite-btn {
+  float: right;
+}
 
+/* LOGO STARWARS NAVBAR*/
 .img-responsive{
   height: auto;
   width: auto;
-  max-width: 250px;
-  max-height: 72px;
-}
-
-.navbar-brand {
-  font-size: 30px !important;
+  max-width: 230px;
+  max-height: 60px;
+  float: left;
 }
 
 .nav-link {
@@ -50,6 +56,7 @@ body {
   color: rgb(29, 6, 6) !important;
   font-size: 26px;
 }
+
 
 .nav-link:hover {
   font-weight: 600;
@@ -114,6 +121,8 @@ body {
 .favs:hover {
   color: rgb(206, 209, 12) !important;
 }
+
+
 
 /*  MODAL    */
 .modal-body,

@@ -4,12 +4,13 @@ export const Context = createContext(null);
 
 const injectContext = PassedComponent => {
     const StoreWrapper = props => {
-        const [state, setState] = useState(getState({
+        const [state, setState] = useState(
+            getState({
             getStore: () => state.store,
             getActions: () => state.actions,
-            setStore: updateStore => setState({
+            setStore: updateStore => 
+            setState({
                 store: Object.assign(state.store, updateStore),
-                store: { ...state.store, ...updateStore },
                 actions: { ...state.actions }
             })
         }));
@@ -19,6 +20,7 @@ const injectContext = PassedComponent => {
             state.actions.getCharacters();
             state.actions.getPlanets();
             state.actions.getVehicles();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [])
 
         return (
