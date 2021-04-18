@@ -6,7 +6,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         vehicles: null,
 
         favorites: [],
-
         globalName: []
       },
       actions: {
@@ -37,59 +36,38 @@ const getState = ({ getStore, getActions, setStore }) => {
               });
             });
         },
-    
-        getList: () => {
-            if (localStorage.getItem('lista')) {
-                let u = localStorage.getItem('lista');
+
+
+          //AGREGA EL PERSONAJE A FAVORITOS
+        getFavorites: () => {
+            if (localStorage.getItem('List')) {
+                let u = localStorage.getItem('List');
                 setStore({ favorites: JSON.parse(u) })
             }
-            /*                 if (getStore().favorites.includes(personaje)){
-                                alert('El personaje ya se encuentra en la lista de favoritos')
-                                console.log('personaje ya existe en la lista')
-                            } else {
-                            
-                            setStore({
-                                favorites: getStore().favorites.concat(personaje)
-                            })} */
         },
 
         saveList: () => {
-            localStorage.setItem('lista', JSON.stringify(getStore().favorites))
-        },
-        addCharacter: (personaje) => {
-            if (getStore().favorites.includes(personaje)) {
-                alert('El personaje ya se encuentra en la lista de favoritos')
-                console.log('personaje ya existe en la lista')
-            } else {
+          localStorage.setItem('lista', JSON.stringify(getStore().favorites))
+      },
+      addCharacter: (personaje) => {
+          if (getStore().favorites.includes(personaje)) {
+              alert('El personaje ya se encuentra en la lista de favoritos')
+              console.log('personaje ya existe en la lista')
+          } else {
 
-                setStore({
-                    favorites: getStore().favorites.concat(personaje)
-                })
-            }
-            getActions().saveList();
-        },
-        deleteFavorite: (item) => {
-            setStore({
-                favorites: getStore().favorites.filter(fav => fav !== item)
-            })
-            
-            getActions().saveList();
-
-        }
-
-
-
-        /// CAPTURA EL FAVORITO Y LO MANTIENE PERO NO LO GUARDA EN SET STORE
-        /*  pushFavorite: (name) => {
-        let store = getStore();
+              setStore({
+                  favorites: getStore().favorites.concat(personaje)
+              })
+          }
+          getActions().saveList();
+      },
+      deleteFavorite: (item) => {
           setStore({
-            globalName: store.globalName.concat(name)
-          });
-        },
-        captureItem: name => {
-            let found = getStore().favorites.find(item => item === name);
-            if (!found) setStore({ favorites: [...getStore().favorites, name] });
-        }, */
+              favorites: getStore().favorites.filter(fav => fav !== item)
+          })
+          
+          getActions().saveList();
+        }
       },
     };
   };

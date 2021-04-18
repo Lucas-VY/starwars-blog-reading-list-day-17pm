@@ -3,54 +3,63 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../index.css";
 
+
 const Characters =() => {
   const { store, actions } = useContext(Context);
-  
+
 
   return (
-    <>
+      <>
       <div className="row mb-5">
         <h1 className="text-white position-absolute ml-5">
           May the Force be with you!
         </h1>
       </div>
+
       <div className="row">
+
+        {/* MAP CARDS */}
         {!!store.characters &&
           store.characters.results.map((valor, i) => {
             return (
               <>
                 <div className="col-md-3 py-3 mt-2" key={i}>
                   <div className="card w-100 animate__animated animate__fadeIn">
-                    <img
-                      class="card-img-top"
-                      src={`https://starwars-visualguide.com/assets/img/characters/${i + 1
-                        }.jpg`}
-                      alt="https://placeholder.com/#How_To_Set_Image_Size400x200"
-                    />
-                    <div className="card-body">
+                    
+                    <img className="card-img-top"
+                          
+                      src={`https://starwars-visualguide.com/assets/img/characters/${ i + 1 }.jpg`}
+                      alt="https://placeholder.com/#How_To_Set_Image_Size400x200"/>
+                    <div className="card-body"> 
+
                       <h2 className="card-title">
                         <Link to="#">{valor.name}</Link>
-                      </h2>
+                      </h2> 
+
                       <h5 className="card-text">gender: {valor.gender}</h5>
                       <h5 className="card-text">height: {valor.height}</h5>
-                      <h5 className="card-text">Hair Color: {valor.hair_color}</h5>
+                      <h5 className="card-text">Hair Color: {valor.hair_color}</h5> 
+
                     </div>
 
 
                     {/* <!-- Button trigger modal --> */}
                     <div className="card-footer">
                       <button
+                        className="btn btn-primary btn-lg"
                         type="button"
-                        class="btn btn-primary btn-lg"
                         data-toggle="modal"
                         data-target={"#exampleModal" + i}
                       >
                         Read More!
                       </button>
 
-                      {/* Favorite BUTTON */}
-                      <button className="btn btn-lg btn-danger d-block float-right" onClick={() => actions.pushFavorite(valor.name)}>
-                        <i className="fas fa-star " ></i>
+
+
+
+                      {/* Favorite BUTTON */}  {/* fas fa-star */}  {/* onClick={() => actions.pushFavorite(valor.name)} */}
+                      <button onClick={() => { actions.addCharacter(valor.name) }} className="btn btn-lg btn-danger d-block float-right" >
+                        <i className={store.favorites.includes(valor.name)?"colored fas fa-star" : "fas fa-star"}></i>
                       </button>
                     </div>
                   </div>
@@ -111,12 +120,10 @@ const Characters =() => {
                         </div>
 
                         {/* MODAL FOOTER */}
-                        <div class="modal-footer bg-dark">
-                          <button
+                        <div className="modal-footer bg-dark">
+                          <button className="btn btn-secondary btn-danger btn-lg"
                             type="button"
-                            class="btn btn-secondary btn-danger btn-lg"
-                            data-dismiss="modal"
-                          >
+                            data-dismiss="modal">
                             Close and Keep Searching!
                           </button>
                         </div>

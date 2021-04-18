@@ -43,8 +43,11 @@ const Vehicles = () => {
                       >
                         Read More
                       </button>
-                      <button className="btn btn-lg btn-danger d-block float-right" onClick={() => actions.pushFavorite(valor.name)}>
-                        <i className="fas fa-star"></i>
+
+                      {/*  FAVORITE BUTTON */}
+
+                      <button onClick={() => { actions.addCharacter(valor.name) }} className="btn btn-lg btn-danger d-block float-right">
+                        <i className={store.favorites.includes(valor.name)?"colored fas fa-star" : "fas fa-star"}></i>
                       </button>
                     </div>
                   </div>

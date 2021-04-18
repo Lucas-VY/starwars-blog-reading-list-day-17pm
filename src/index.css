@@ -7,7 +7,7 @@
 /* https://c4.wallpaperflare.com/wallpaper/703/83/723/star-wars-star-wars-episode-iii-the-revenge-of-the-sith-jedi-sith-wallpaper-preview.jpg */
 
 body {
-  background-image: url("https://wallpapermemory.com/uploads/918/darth-vader-wallpaper-1080p-458937.jpg")!important;
+  background-image: url("https://wallpapermemory.com/uploads/384/star-wars-background-1080p-459916.jpg")!important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -35,6 +35,8 @@ body {
   );
   font-family: "Bebas Neue";
 }
+
+
 .main-nav{
   float:left;
 }
