@@ -9,7 +9,8 @@ const Favorites = () => {
       <div className="row">
           <h1 className="col-md-12 text-center title text-danger">FAVORITES</h1>
           <div className="col-md-6 offset-3">
-
+              
+            {/*  LIST OF FAVORITES  */}
               <div className="list-group-item">This is your List of Favorites<span className="float-right">{store.favorites.length}</span></div>
               <ul className="list-group">
                   {

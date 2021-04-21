@@ -45,14 +45,14 @@ const getState = ({ getStore, getActions, setStore }) => {
                 setStore({ favorites: JSON.parse(u) })
             }
         },
-
+        
         saveList: () => {
-          localStorage.setItem('lista', JSON.stringify(getStore().favorites))
+          localStorage.setItem('list', JSON.stringify(getStore().favorites))
       },
       addCharacter: (personaje) => {
           if (getStore().favorites.includes(personaje)) {
-              alert('El personaje ya se encuentra en la lista de favoritos')
-              console.log('personaje ya existe en la lista')
+              alert('this character already exist in your List')
+              console.log('the character already exist on your list')
           } else {
 
               setStore({
