@@ -49,14 +49,14 @@ const getState = ({ getStore, getActions, setStore }) => {
         saveList: () => {
           localStorage.setItem('list', JSON.stringify(getStore().favorites))
       },
-      addCharacter: (personaje) => {
-          if (getStore().favorites.includes(personaje)) {
+      addCharacter: (characters) => {
+          if (getStore().favorites.includes(characters)) {
               alert('this character already exist in your List')
               console.log('the character already exist on your list')
           } else {
 
               setStore({
-                  favorites: getStore().favorites.concat(personaje)
+                  favorites: getStore().favorites.concat(characters)
               })
           }
           getActions().saveList();
